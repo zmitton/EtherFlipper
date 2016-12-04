@@ -44220,7 +44220,7 @@ function setStatus(message) {
 function flipACoin(web3Enabled){
   document.getElementById('coinAnimation').src='images/flip.gif'
   document.getElementById('outcome').innerHTML='Outcome: ...'
-  setTimeout(getBlockNumber, 2000)//wait 2 seconds = extra magician protection
+  setTimeout(getBlockNumber, 2000)//waiting protects against network propagation attack
 }
 function getBlockNumber(){
   web3.eth.getBlockNumber(function(e,referenceBlockNumber){
@@ -44237,7 +44237,7 @@ function getBlockHash(targetBlockNumber){
       document.getElementById('coinAnimation').src='images/'+outcome+'.png'
       document.getElementById('outcome').innerHTML='Outcome: '+outcome
     }else{// targetBlock not mined yet. Check again in a second
-      setTimeout(function(){getBlockHash(targetBlockNumber)}, 1000)
+      setTimeout(function(){getBlockHash(targetBlockNumber)}, 2500)
     }
   })
 }
