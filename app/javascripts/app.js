@@ -12,21 +12,16 @@ function setStatus(message) {
 function flipACoin(web3Enabled){
   document.getElementById('coinAnimation').src='images/flip.gif'
   document.getElementById('outcome').innerHTML='Outcome: ...'
-  // ToDo: setup the loading bar (exponential decay)
-  // if(web3Enabled){
-    web3.eth.getBlockNumber(function(e,referenceBlockNumber){
-      setTimeout(function(){//wait 5 = extra magician protection
-        document.getElementById('outcome').innerHTML='about 15 more seconds...'
-        blockHashAfterBlock(referenceBlockNumber)
-      }, 5000)
-    })
-  // }else{
-  //   console.log("no web3 found")
-  //   //To Do infura http requests!
-  // }
+  setTimeout(getBlockNumber, 2000)//wait 2 seconds = extra magician protection
 }
-function blockHashAfterBlock(referenceBlockNumber){
-  web3.eth.getBlock(referenceBlockNumber+1, function(e,targetBlock){
+function getBlockNumber(){
+  web3.eth.getBlockNumber(function(e,referenceBlockNumber){
+    document.getElementById('outcome').innerHTML='about 15 more seconds...'
+    getBlockHash(referenceBlockNumber+1)
+  })
+}
+function getBlockHash(targetBlockNumber){
+  web3.eth.getBlock(targetBlockNumber, function(e,targetBlock){
     if(targetBlock){
       var outcome;
       console.log(targetBlock.hash)
@@ -34,7 +29,7 @@ function blockHashAfterBlock(referenceBlockNumber){
       document.getElementById('coinAnimation').src='images/'+outcome+'.png'
       document.getElementById('outcome').innerHTML='Outcome: '+outcome
     }else{// targetBlock not mined yet. Check again in a second
-      setTimeout(function(){blockHashAfterBlock(referenceBlockNumber)}, 1000)
+      setTimeout(function(){getBlockHash(targetBlockNumber)}, 1000)
     }
   })
 }

@@ -10,8 +10,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
-    "truffle" : "*",
+  "dependencies": {
+    "truffle" : "*"
+  },
   "scripts": {
     "test": "truffle test",
     "start": "truffle serve"
