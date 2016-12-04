@@ -12,10 +12,13 @@ function setStatus(message) {
 function flipACoin(web3Enabled){
   document.getElementById('coinAnimation').src='images/flip.gif'
   document.getElementById('outcome').innerHTML='Outcome: ...'
-  // ToDo: setup the loading bar
+  // ToDo: setup the loading bar (exponential decay)
   // if(web3Enabled){
     web3.eth.getBlockNumber(function(e,referenceBlockNumber){
-      blockHashAfterBlock(referenceBlockNumber)
+      setTimeout(function(){//wait 5 = extra magician protection
+        document.getElementById('outcome').innerHTML='about 15 more seconds...'
+        blockHashAfterBlock(referenceBlockNumber)
+      }, 5000)
     })
   // }else{
   //   console.log("no web3 found")
