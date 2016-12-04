@@ -9,36 +9,11 @@
   <script src="./app.js"></script>
 </head>
 <body>
-  <h1>Flipper</h1>
-  <h2>Gamble Away your Crypto!</h2>
-  <div><img id="coinAnimation" src="images/flip.gif" alt="COIN FLIPPING..." style="width:100px;display:block;margin:auto;"><div>
-  <h3>Network: <span class="black"><span id="network"></span></span></h3>
-  <h3>Contract Address: <span class="black"><span id="contractAddress"></span></span></h3>
-  <h3>You have <span class="black"><span id="balance"></span> ETH</span></h3>
-  <h3>Game State: <span class="black"><span id="game"></span></span></h3>
-
-  <div class="form">
-    <br>
-    <h1>Create</h1>
-    <br><label for="amount">ETH:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
-    <br><br><button id="create" onclick="createGame()">Create Game</button><br><br>
-    <span id="status"></span>
-  </div>
-
-  <div class="form">
-    <br>
-    <h1>Join</h1>
-    <h3>Current Buy In: <span class="black"><span id="buyIn"></span> ETH</span></h3>
-    <button id="join" onclick="joinGame()">Join Game</button><br><br>
-  </div>
-
-  <div class="form">
-    <br>
-    <h1>Settle</h1>
-    <h3>Winner: <span class="black"><span id="winner"></span></span></h3>
-    <button id="settle" onclick="settle()">Settle Bet</button><br><br>
-  </div>
-
+  <h1>EtherFlipper</h1><br>
+  <h2>Detects Web3 if available!</h2>
+  <div><img id="coinAnimation" src="images/flip.gif" alt="COIN FLIPPING..." style="width:200px;display:block;margin:auto;"><div>
+  <h3><span class="black"><span id="outcome">Outcome: ...</span></span></h3>
+  <div><img id="theCode" src="images/theCode.png" alt="SOURCE CODE..." style="width:100%;display:block;margin:auto;"><div>
 
 </body>
 </html>

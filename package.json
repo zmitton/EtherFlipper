@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "web3-provider-engine": "8",
+    "web3": "*"
+  }
+}
