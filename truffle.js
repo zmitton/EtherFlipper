@@ -25,7 +25,7 @@ module.exports = {
   networks: {
     "default": {
       provider: engine, // Use our custom provider
-      from: 0x0     // Use the address we derived
+      from: 0x0// Use the address we derived
     }
   }
 }

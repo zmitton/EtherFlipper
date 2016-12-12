@@ -11,10 +11,10 @@
     "test": "test"
   },
   "dependencies": {
-    "truffle" : "*"
+    "truffle": "^2.1.1"
   },
   "scripts": {
-    "start": "truffle serve"
+    "start": "./truffle build && ./truffle compile && ./truffle serve"
   },
   "repository": {
     "type": "git",
