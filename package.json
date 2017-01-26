@@ -1,7 +1,6 @@
 {
   "devDependencies": {
-    "web3-provider-engine": "8",
-    "web3": "*"
+    "web3-provider-engine": "8"
   },
   "name": "etherflipper",
   "version": "0.1.0",
@@ -10,6 +9,7 @@
     "test": "test"
   },
   "dependencies": {
+    "web3": "*",
     "express": "^4.14.0"
   },
   "scripts": {
