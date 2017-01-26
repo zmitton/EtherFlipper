@@ -5382,7 +5382,6 @@ function flipACoin(web3Enabled){
     getFutureBlockHash(referenceBlockNumber + 1, showCoinSolution)
   })
 }
-
 function getFutureBlockHash(targetBlockNumber, callback){
   web3.eth.getBlock(targetBlockNumber, function(e,targetBlock){
     if(targetBlock){
@@ -5395,6 +5394,6 @@ function getFutureBlockHash(targetBlockNumber, callback){
 var showCoinSolution = function(sha3){
   console.log("blockhash:", sha3)
   var outcome = parseInt(sha3.toString().slice(60), 16)%2==0 ? "HEADS":"TAILS"
-  document.getElementById('coinAnimation').src='images/'+outcome+'.png'
+  document.getElementById('coinAnimation').src='/images/'+outcome+'.png'
   document.getElementById('outcome').innerHTML='Outcome: '+outcome
 }
