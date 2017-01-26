@@ -5393,7 +5393,7 @@ function getFutureBlockHash(targetBlockNumber, callback){
 }
 var showCoinSolution = function(sha3){
   console.log("blockhash:", sha3)
-  var outcome = parseInt(sha3.toString().slice(60), 16)%2==0 ? "head":"tail"
+  var outcome = parseInt(sha3.toString().slice(60), 16)%2==0 ? "heads":"tails"
   document.getElementById('coinAnimation').src='/images/'+outcome+'.png'
   document.getElementById('outcome').innerHTML='Outcome: '+outcome
 }
