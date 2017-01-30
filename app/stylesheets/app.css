@@ -5,7 +5,7 @@ body {
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-@media (min-width: 800px){
+@media (min-device-width: 500px){
   body {
     margin-left: 25%;
     margin-right: 25%;
